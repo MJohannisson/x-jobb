@@ -21,15 +21,15 @@ function showDiv() {
   document.getElementById("welcomeDiv").style.display = "block";
 }
 
-window.onload = function(){
-  var divToHide = document.getElementById('welcomeDiv');
-  document.onclick = function(e){
-    if(e.target.id !== 'welcomedive'){
-      //element clicked wasn't the div; hide the div
-      divToHide.style.display = 'none';
-    }
-  };
-};
+// window.onload = function(){
+//   var divToHide = document.getElementById('welcomeDiv');
+//   document.onclick = function(e){
+//     if(e.target.id !== 'welcomedive'){
+//       //element clicked wasn't the div; hide the div
+//       divToHide.style.display = 'none';
+//     }
+//   };
+// };
 
 
 
