@@ -17,19 +17,37 @@ $(document).ready(function() {
 
 
 
+var specifiedElement = document.getElementById('welcomeDiv');
+var specifiedElement2 = document.getElementById('loginButton')
+document.addEventListener('click', function(event) {
+  var isClickInside = specifiedElement.contains(event.target) || specifiedElement2.contains(event.target);
+  if(specifiedElement.style.display === "block")
+  {
+    if(!isClickInside)
+    {
+      specifiedElement.style.display = "none";
+    }
+  }
+});
+
 function showDiv() {
-  document.getElementById("welcomeDiv").style.display = "block";
+  var theDiv = document.getElementById("welcomeDiv");
+  if(theDiv.style.display === 'none')
+  {
+    theDiv.style.display = "block";
+  }
+  else
+  {
+    theDiv.style.display = "none";
+  }
 }
 
-// window.onload = function(){
-//   var divToHide = document.getElementById('welcomeDiv');
-//   document.onclick = function(e){
-//     if(e.target.id !== 'welcomedive'){
-//       //element clicked wasn't the div; hide the div
-//       divToHide.style.display = 'none';
-//     }
-//   };
-// };
+
+
+
+// function showDiv() {
+//   document.getElementById("welcomeDiv").style.display = "block";
+// }
 
 
 

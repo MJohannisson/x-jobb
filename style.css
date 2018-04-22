@@ -212,6 +212,15 @@ nav ul li a:hover {
 
 } */
 
+.answer_list
+{
+  margin: 0 auto;
+  padding: 0px;
+  max-width: 450px;
+  border: 1px solid red;
+}
+
+
 .wrapp {
   display: flex; /*Gömmer */
   align-items: center;
