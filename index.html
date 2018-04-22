@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>X-Jobb</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- För att kunna använda Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<!-- Top Menu -->
+<header class="header">
+    <nav>
+        <input type="checkbox" id="nav" class="hidden"/>
+        <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+        <div class="nav-container">
+          <ul class="navbar-nav">
+            <li><a href="#">Hem</a></li>
+            
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#" type="button" name="answer" value="Show Div" onclick="showDiv()">Logga in</a></li>
+          </ul>
+        </div>
+      </nav>
+</header>
+
+<!--Main body-->
+<body>
+  <div class="wrapper">
+    <div class="one">
+      <div class="mainheader">
+          <h2>Nästa generation av X-jobb</h2>
+          <p>Detta är en paragraph</p>
+          <button id="Registrera" type="button" onclick="registreraFunc()">Registrera</button>
+
+          <!-- Login form -->
+          <div id="welcomeDiv" style="display:none;" class="answer_list">
+          <div class="wrapp fadeInDown">
+              <div id="formContent">
+                <!-- Tabs Titles -->
+                <h2 class="active"> Sign In </h2>
+                <h2 class="inactive underlineHover">Sign Up </h2>
+            
+                <!-- Icon -->
+                <div class="fadeIn first">
+                  <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+                </div>
+            
+                <!-- Login Form -->
+                <form>
+                  <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+                  <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+                  <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+            
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                  <a class="underlineHover" href="#">Forgot Password?</a>
+                </div>
+            
+              </div>
+            </div>
+          </div>
+            <!-- END -->
+      </div>
+    </div>
+    <div class="two">
+      <div class="Stegrubrik">
+        <h3>Snabbt, Enkelt, Smidigt</h3>
+        <p>Ladda upp ditt cv, sök efter annonser, matcha med företag</p>
+      </div>
+      <div class="clearfix">
+          <div class="img-container">
+            <img src="img_forest.jpg" alt="Forest" style="width:100%">
+            <h5>Ladda upp Cv</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          </div>
+          <div class="img-container">
+            <img src="img_forest.jpg" alt="Forest" style="width:100%">
+            <h5>Sök X-jobb</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          </div>
+          <div class="img-container">
+            <img src="img_forest.jpg" alt="Forest" style="width:100%">
+            <h5>Matcha med företag</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur.</p>
+          </div>
+        </div>
+
+
+
+        <!-- Progress bar.  -->
+        <!-- <div class="inliner"></div>
+        <div class="inlined"> -->
+          
+          <!-- Start component -->
+          <!-- <div class="progress-meter">
+            <div class="track">
+              <span class="progress"></span>
+            </div>
+            <ol class="progress-points" data-current="4">
+              <li class="progress-point">
+                <span class="label">Lorem ipsum1</span>
+              </li>
+              <li class="progress-point">
+                <span class="label">Lorem ipsum2</span>
+              </li>
+              <li class="progress-point">
+                <span class="label">Lorem ipsum3</span>
+              </li>
+              <li class="progress-point">
+                <span class="label">Lorem ipsum4</span>
+              </li>
+              <li class="progress-point">
+                <span class="label">Lorem ipsum6</span>
+              </li>
+            </ol>
+          </div> -->
+          <!-- End component -->
+          
+          <!-- Demo only -->
+          <!-- <div class="controls">
+            <button class="trigger">Toggla tillbaka</button>
+          </div>
+        </div>
+     -->
+
+
+
+
+    </div>
+
+    <div class="three">
+        <div class="text-container">
+            <p>hello world trying here dasdasdasd asdssadas dsasadsad</p>
+        </div>
+    </div>
+    <div class="four">bild </div>
+
+    <div class="five">Anpassning</div>
+    <div class="six">Apassning bilder</div>
+
+    <div class="seven">Elever</div>
+
+    <div class="eight">Elever kommentarer</div>
+    <div class="nine">
+        <p class="info-kontakt">Vill ni kontakta oss skicka ett mail</p>
+        <input type="skriv din mail här">
+        <button class="btnmailsend">Skicka</button>
+    </div>
+    
+    <div class="ten">
+        <div class="partners">
+            <h3>Våra samarbetspartners</h3>
+            <p>Detta är en paragraph</p>
+            
+        </div>
+    </div>
+    
+    <div class="eleven">
+      <!--Footer Info-->
+      <footer>
+        <div class="left-section">
+            <section id="section-left">My left section</section>
+            <section id="section-right">My right section</section>
+        </div>
+        <div class="middle-section">
+            <h2>hallo2</h2>
+
+        </div>
+        <div class="right-section">
+            <h2>hallo3</h2>
+
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDXw4A9XQzGnUpCu2YzgvqWTFar4TP_Gr4",
+    authDomain: "projekt-x-jobb.firebaseapp.com",
+    databaseURL: "https://projekt-x-jobb.firebaseio.com",
+    projectId: "projekt-x-jobb",
+    storageBucket: "projekt-x-jobb.appspot.com",
+    messagingSenderId: "1044539484293"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="script.js"></script>
+</body>
+
+</html>
