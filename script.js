@@ -1,4 +1,4 @@
-
+//Hejsan allihoPA
 /* Script för scroll av navigation */
 $(document).ready(function() {
   // Transitions effekt header 
