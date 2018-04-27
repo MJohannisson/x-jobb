@@ -6,9 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>X-Jobb</title>
+  <!-- För att kunna använda animation -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Import and configure the Firebase SDK -->
+  <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
+  <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
+  <script src="/__/firebase/4.0.0/firebase-app.js"></script>
+  <script src="/__/firebase/4.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
   <!-- För att kunna använda Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 <!-- Top Menu -->
 <header class="header">
@@ -18,10 +28,9 @@
         <div class="nav-container">
           <ul class="navbar-nav">
             <li><a href="#">Hem</a></li>
-            
             <li><a href="#">Om oss</a></li>
             <li><a href="#">Kontakt</a></li>
-            <li id="loginButton"><a href="#" type="button" name="answer" value="Show Div" onclick="showDiv()">Logga in</a></li>
+            <li><a href="#" type="button" name="answer" value="Show Div" onclick="showDiv()">Logga in</a></li>
           </ul>
         </div>
       </nav>
@@ -32,45 +41,39 @@
   <div class="wrapper">
     <div class="one">
       <div class="mainheader">
+          <h1 class="animated infinite bounce">Example</h1>
           <h2>Nästa generation av X-jobb</h2>
           <p>Detta är en paragraph</p>
-          <button id="Registrera" type="button" onclick="registreraFunc()">Registrera</button>
-
           <!-- Login form -->
-          <div id="welcomeDiv" style="display:none;" class="answer_list">
-          <div class="wrapp fadeInDown">
+          <div id="welcomeDiv" style="display:none;" class="fadeInDown">
               <div id="formContent">
-                <!-- Tabs Titles -->
-                <h2 class="active"> Sign In </h2>
-                <h2 class="inactive underlineHover">Sign Up </h2>
+                <h2 class="active">Logga in</h2>
+                  <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+                  <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="password" name="password" placeholder="Lösenord"/>
+                  <br><br>
+                  <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+      
+                  <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
             
-                <!-- Icon -->
-                <div class="fadeIn first">
-                  <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-                </div>
-            
-                <!-- Login Form -->
-                <form>
-                  <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                  <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-                  <input type="submit" class="fadeIn fourth" value="Log In">
-                </form>
-            
-                <!-- Remind Passowrd -->
+                <button class="mdl-button mdl-js-button mdl-button--raised" disabled id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
                 <div id="formFooter">
-                  <a class="underlineHover" href="#">Forgot Password?</a>
+                    <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
                 </div>
-            
-              </div>
-            </div>
+          </div>    
           </div>
-            <!-- END -->
+          <!-- END -->
       </div>
     </div>
     <div class="two">
       <div class="Stegrubrik">
         <h3>Snabbt, Enkelt, Smidigt</h3>
         <p>Ladda upp ditt cv, sök efter annonser, matcha med företag</p>
+      </div>
+       <!-- Container where we'll display the user details -->
+       <div class="quickstart-user-details-container">
+          Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+          <div>Firebase auth <code>currentUser</code> object value:</div>
+          <pre><code id="quickstart-account-details">null</code></pre>
       </div>
       <div class="clearfix">
           <div class="img-container">
@@ -89,47 +92,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur.</p>
           </div>
         </div>
-
-
-
-        <!-- Progress bar.  -->
-        <!-- <div class="inliner"></div>
-        <div class="inlined"> -->
-          
-          <!-- Start component -->
-          <!-- <div class="progress-meter">
-            <div class="track">
-              <span class="progress"></span>
-            </div>
-            <ol class="progress-points" data-current="4">
-              <li class="progress-point">
-                <span class="label">Lorem ipsum1</span>
-              </li>
-              <li class="progress-point">
-                <span class="label">Lorem ipsum2</span>
-              </li>
-              <li class="progress-point">
-                <span class="label">Lorem ipsum3</span>
-              </li>
-              <li class="progress-point">
-                <span class="label">Lorem ipsum4</span>
-              </li>
-              <li class="progress-point">
-                <span class="label">Lorem ipsum6</span>
-              </li>
-            </ol>
-          </div> -->
-          <!-- End component -->
-          
-          <!-- Demo only -->
-          <!-- <div class="controls">
-            <button class="trigger">Toggla tillbaka</button>
-          </div>
-        </div>
-     -->
-
-
-
 
     </div>
 
@@ -191,7 +153,7 @@
   };
   firebase.initializeApp(config);
 </script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
